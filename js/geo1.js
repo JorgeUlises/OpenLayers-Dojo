@@ -15,16 +15,3 @@ function getMyLocation(){
       });
     }
 }
-function changeVisibility () {
-	if(dojo.byId("mapContainer").style.display == "block")
-	{
-		dojo.byId("mapContainer").style.display = "none";
-		dojo.byId("rightPane").style.display = "block";
-		dojo.byId("rightPane").style.width = "100%";
-	}
-	else
-	{
-		
-	} 
-	dijit.registry.byId("bc").resize();
-}

@@ -14,8 +14,6 @@ require([
             ], function(ready) {
     ready(function(){console.log("Estas usando Dojo Toolkit "+dojo.version.major + "." + dojo.version.minor + "." + dojo.version.patch+" en "+document.URL);
                      createMap();
-                     resizeElements();
-                     window.onresize=function(){resizeElements();};
                     })
 });
        
@@ -51,38 +49,6 @@ function createMap(){
     markers.addMarker(new OpenLayers.Marker(position));
     
     map.setCenter(position, zoom);
-    //convertir la attribucion a artgis
-    dojo.query(".olControlAttribution.olControlNoSelect")[0].innerHTML = "";
-   	dojo.addClass(dojo.query(".olControlAttribution.olControlNoSelect")[0],"logo");
-}
-
-function isMobile()
-{
-	if (document.body.offsetWidth<=720 || document.body.offsetHeight<=450)
-	{
-		return true
-	}
-	else
-	{
-		return false
-	}
-}
-function resizeElements(){
-	if(isMobile())
-	{
-		dojo.byId("header").style.display = "none"; 	
-		dojo.byId("rightPane").style.display = "none";
-		dojo.byId("map").style.width="100%";
-		dojo.byId("switcher").style.display = "block";
-	}
-	else
-	{
-		dojo.byId("header").style.display = "block";
-		dojo.byId("rightPane").style.display = "block";
-		dojo.byId("switcher").style.display = "none";	
-	}
-	dijit.registry.byId("bc").resize();
-	map.updateSize();
 }
 
 function consoleLog(){

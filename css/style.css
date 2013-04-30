@@ -43,6 +43,7 @@ html, body {
 	z-index: 999;
 	background-color: transparent !important;
 	border: none;
+	background-image: none;
 }
 .dijitGutter{
 	display: none;
